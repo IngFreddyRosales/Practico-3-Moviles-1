@@ -30,8 +30,6 @@ class MainActivity : AppCompatActivity() {
             setupInitialFragment()
         }
 
-        setupEventListeners()
-
     }
 
     private fun setupInitialFragment() {
@@ -40,22 +38,4 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun setupEventListeners() {
-    }
-
-    fun navigateToLikedProfiles() {
-        navigateToFragment(LikedProfilesFragment())
-    }
-
-    private fun navigateToFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_Container, fragment)
-            .addToBackStack(null)
-            .commit()
-    }
-
-    // Función para regresar al fragmento anterior si se quiere manejar la navegación manualmente
-    fun navigateBack() {
-       // supportFragmentManager.popBackStack()
-    }
 }
